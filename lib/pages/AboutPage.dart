@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:website/model/MyUtils.dart';
+import 'package:website/widgets/AboutPanel.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({
@@ -10,30 +12,51 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height - 100.0,
-      width: MediaQuery.of(context).size.width,
-      child: Container(
-        color: Colors.black,
+    return Center(
+      child: SizedBox(
+        height: MyUtils.pageHeight(context),
+        width: MyUtils.pageWidth(context),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: MyUtils.pageWidth(context),
+              child: Text(
+                "About me:",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 60.0,
+                  color: Colors.white,
+                  fontFamily: "Raleway-Light",
+                ),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    AboutPanel(
+                      title: "Personal info",
+                      text:
+                          "I'm a young and creative software developer focused mainly on designing and building intuitive and aesthetic mobile applications for Android and iOS using Flutter. I also experiment with Flutter for Web and Desktop.\nLast, but not least I'm a christan - an active follower of Jesus Christ in every aspect of my life.\n1 John 5:12",
+                    ),
+                    SizedBox(
+                      width: 100.0,
+                    ),
+                    AboutPanel(
+                      title: "Skill set",
+                      text:
+                          "I'm also fluent in English and Polish, written and spoken.",
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-/*
-Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.1,
-            vertical: MediaQuery.of(context).size.height * 0.1,
-          ),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.all(
-                Radius.circular(25.0),
-              ),
-            ),
-            child: Container(),
-          ),
-        ),
-        */

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:website/model/MyUtils.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({
@@ -10,11 +11,27 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height - 100.0,
-      width: MediaQuery.of(context).size.width,
-      child: Container(
-        color: Color.fromARGB(255, 31, 31, 31),
+    return Center(
+      child: SizedBox(
+        height: MyUtils.pageHeight(context),
+        width: MyUtils.pageWidth(context),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: MyUtils.pageWidth(context),
+              child: Text(
+                "Contact:",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 60.0,
+                  color: Colors.white,
+                  fontFamily: "Raleway-Light",
+                ),
+              ),
+            ),
+            Expanded(child: Text("Contact me")),
+          ],
+        ),
       ),
     );
   }

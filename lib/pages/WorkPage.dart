@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:website/model/MyUtils.dart';
+import 'package:website/widgets/WorkPanel.dart';
 
 class WorkPage extends StatelessWidget {
   const WorkPage({
@@ -10,11 +12,41 @@ class WorkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height - 100.0,
-      width: MediaQuery.of(context).size.width,
-      child: Container(
-        color: Colors.black,
+    return Center(
+      child: SizedBox(
+        height: MyUtils.pageHeight(context),
+        width: MyUtils.pageWidth(context),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: MyUtils.pageWidth(context),
+              child: Text(
+                "My work:",
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 60.0,
+                  color: Colors.white,
+                  fontFamily: "Raleway-Light",
+                ),
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    WorkPanel(id: 0),
+                    WorkPanel(id: 1),
+                    WorkPanel(id: 2),
+                    WorkPanel(id: 3),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

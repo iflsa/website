@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:website/model/MyUtils.dart';
 
 import 'package:website/widgets/MyAppbar.dart';
 
@@ -36,25 +37,28 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          MyAppbar(_ctrl, scrl),
-          SizedBox(
-            height: MediaQuery.of(context).size.height - 100,
-            width: MediaQuery.of(context).size.width,
-            child: Scrollbar(
-              child: ListView(
-                controller: _ctrl,
-                children: <Widget>[
-                  HomePage(ctrl: _ctrl),
-                  AboutPage(ctrl: _ctrl),
-                  WorkPage(ctrl: _ctrl),
-                  ContactPage(ctrl: _ctrl),
-                ],
+      body: Container(
+        color: Colors.black,
+        child: Column(
+          children: <Widget>[
+            MyAppbar(_ctrl, scrl),
+            SizedBox(
+              height: MyUtils.pageHeight(context),
+              width: MediaQuery.of(context).size.width,
+              child: Scrollbar(
+                child: ListView(
+                  controller: _ctrl,
+                  children: <Widget>[
+                    HomePage(ctrl: _ctrl),
+                    AboutPage(ctrl: _ctrl),
+                    WorkPage(ctrl: _ctrl),
+                    ContactPage(ctrl: _ctrl),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
