@@ -40,7 +40,7 @@ class AboutPage extends StatelessWidget {
                     AboutPanel(
                       title: "Personal info",
                       text:
-                          "I'm a young and creative software developer focused mainly on designing and building intuitive and aesthetic mobile applications for Android and iOS using Flutter. I also experiment with Flutter for Web and Desktop.\nLast, but not least I'm a christan - an active follower of Jesus Christ in every aspect of my life.\n1 John 5:12",
+                          "I'm a young and creative software developer focused mainly on designing and building intuitive and aesthetic mobile applications for Android and iOS using Flutter. I also experiment with Flutter for Web and Desktop.\nLast, but not least, I'm a christan - an active follower of Jesus Christ in every aspect of my life.\n1 John 5:12",
                     ),
                     SizedBox(
                       width: 100.0,
@@ -48,7 +48,7 @@ class AboutPage extends StatelessWidget {
                     AboutPanel(
                       title: "Skill set",
                       text:
-                          "I'm also fluent in English and Polish, written and spoken.",
+                          "Even though I'm mainly interested in working with Flutter I also have a knowledge of Native Android and iOS development. I can design using Figma and make graphics with Photoshop if needed. I'm also fluent in English and Polish, written and spoken.\nIf you want to know anything more just contact me.",
                     ),
                   ],
                 ),

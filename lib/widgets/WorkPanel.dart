@@ -25,7 +25,7 @@ class WorkPanel extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(25.0),
+            padding: const EdgeInsets.all(50.0),
             child: Flex(
               direction: Axis.vertical,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

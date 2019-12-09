@@ -1,7 +1,7 @@
 name: website
-description: A new Flutter project.
+description: ratajczyk.me website
 
-version: 1.0.0+1
+version: 1.0.0
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   auto_size_text: ^2.1.0
+  flutter_email_sender: ^2.2.1
+  draggable_scrollbar: ^0.0.4
 
   cupertino_icons: ^0.1.2
 
