@@ -7,7 +7,9 @@ class MyAppbar extends StatelessWidget {
   final ScrollController ctrl;
   final double scrl;
   isUnderlined(ctx, int n) =>
-      scrl ~/ (MediaQuery.of(ctx).size.height - 100.0) == n;
+      (scrl + MediaQuery.of(ctx).size.height / 2) ~/
+          (MediaQuery.of(ctx).size.height - 100.0) ==
+      n;
 
   @override
   Widget build(BuildContext context) {
